@@ -8,9 +8,11 @@ import { useFonts } from 'expo-font';
 
 import ShopNavigator from './navigation/shopNavigator';
 import productsReducer from './store/reducers/products';
+import cartReducer from './store/reducers/cart';
 
 const rootReducer = combineReducers({
   products: productsReducer,
+  cart: cartReducer,
 })
 
 const store = createStore(rootReducer);
