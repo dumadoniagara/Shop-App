@@ -11,7 +11,6 @@ const ProductItem = props => {
     return (
         <View style={styles.product}>
             <View style={styles.touchable}>
-
                 <TouchableCmp onPress={props.onViewDetail} useForeground>
                     <View>
                         <View style={styles.imageContainer}>
