@@ -7,6 +7,7 @@ const ProductItem = props => {
     if (Platform.OS == 'android' && Platform.Version >= 21) {
         TouchableCmp = TouchableNativeFeedback;
     }
+    // console.log('test');
 
     return (
         <View style={styles.product}>
