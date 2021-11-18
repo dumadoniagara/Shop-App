@@ -1,14 +1,19 @@
+/* import all main dependencies */
 import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createStackNavigator } from 'react-navigation-stack';
 import { Platform } from 'react-native';
 
+/* import all screens */
 import ProductsOverviewScreen from '../screens/shop/ProductOverviewScreen';
 import ProductDetailScreen from '../screens/shop/ProductDetailScreen';
 import CartScreen from '../screens/shop/CartScreen';
 import OrdersScreen from '../screens/shop/OrdersScreen';
 import UserProductsScreen from '../screens/user/UserProductsScreen';
+import EditProductScreen from '../screens/user/EditProductScreen';
+
+/* import helper, constant, and third-party library */
 import { Ionicons } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
 
@@ -45,9 +50,10 @@ const ProductsNavigator = createStackNavigator(
     }
 );
 
-const OrderNavigator = createStackNavigator({
-    Orders: OrdersScreen,
-}, {
+const OrderNavigator = createStackNavigator(
+    {
+        Orders: OrdersScreen,
+    }, {
     defaultNavigationOptions: defaultNavOptions,
     navigationOptions: {
         drawerIcon: drawerConfig => (
@@ -60,9 +66,11 @@ const OrderNavigator = createStackNavigator({
     }
 })
 
-const AdminNavigator = createStackNavigator({
-    UsersProducts: UserProductsScreen,
-}, {
+const AdminNavigator = createStackNavigator(
+    {
+        UsersProducts: UserProductsScreen,
+        EditProduct: EditProductScreen,
+    }, {
     defaultNavigationOptions: defaultNavOptions,
     navigationOptions: {
         drawerIcon: drawerConfig => (
@@ -78,7 +86,7 @@ const AdminNavigator = createStackNavigator({
 const ShopNavigator = createDrawerNavigator({
     Products: ProductsNavigator,
     Orders: OrderNavigator,
-    Admin : AdminNavigator,
+    Admin: AdminNavigator,
 }, {
     contentOptions: {
         activeTintColor: Colors.primary,
