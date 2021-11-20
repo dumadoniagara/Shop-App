@@ -24,6 +24,7 @@ const EditProductScreen = props => {
             console.log('addproduct - 1');
             dispatch(productAction.createProduct(title, description, imageUrl, +price))
         }
+        props.navigation.goBack();
     }, [dispatch, prodId, title, description, imageUrl, price]);
 
     // being hit every-time submitHandler change.

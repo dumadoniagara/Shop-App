@@ -7,6 +7,8 @@ const ProductItem = props => {
         TouchableCmp = TouchableNativeFeedback;
     }
 
+    console.log('props nya adalah ==', props);
+
     return (
         <View style={styles.product}>
             <View style={styles.touchable}>
@@ -17,7 +19,7 @@ const ProductItem = props => {
                         </View>
                         <View style={styles.detail}>
                             <Text style={styles.title}>{props.title}</Text>
-                            <Text style={styles.price}>${props.price.toFixed(2)}</Text>
+                            <Text style={styles.price}>${props.price}</Text>
                         </View>
                         <View style={styles.actions}>
                             {props.children}
@@ -56,6 +58,7 @@ const styles = StyleSheet.create({
     image: {
         width: '100%',
         height: '100%',
+        resizeMode: 'contain',
     },
     title: {
         fontSize: 18,
